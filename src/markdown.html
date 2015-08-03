@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=9" >
+
+<title>STATS OPEN PROJECT Extension Command</title>
+
+<link rel="stylesheet" type="text/css" href="extsyntax.css" />
+
+
+
+
+
+</head>
+
+<body>
+<h1>STATS OPEN PROJECT Extension Command</h1>
+
+<p>Open a project defined in a project file</p>
+<div class="syntax">
+<p>STATS OPEN PROJECT<br/>
+FILE=&ldquo;<em>file</em>&rdquo;<br/>
+PASSWORD=&ldquo;<em>password</em>&rdquo;<br/>
+STARTUP = ASIS<sup>&#42;&#42;</sup> or SET or DELETE</p>
+
+<p>/HELP</p>
+
+<p><sup>&#42;</sup> Required<br/>
+<sup>&#42;&#42;</sup> Default</p>
+</div>
+<p>/HELP displays this help and does nothing else.</p>
+
+<p>A project file defines a set of files to open and SPSS code to run.  A
+project can be set to open automatically when Statistics is launched.</p>
+
+<p><strong>FILE</strong> is the name of a project file to open.  A project file is a plain text
+file with the following format.</p>
+
+<pre class="examplenobefore"><code>[RUN]
+syntax commands in interactive format
+[OPEN]
+list of data (.sav), syntax (.sps), and output (.spv) files to open,
+one per line
+[PROJECT]
+list of other project files to be opened
+</code></pre>
+
+<p>Sections may appear in any order and may be repeated.
+Files listed in a PROJECT section must follow this same format.
+If you have a standard utility library and various working projects,
+it may be convenient to reference a standard project file first and then
+make working project specifications.</p>
+
+<p>File handles defined in executed RUN sections or before this command can
+be used in file listings.</p>
+
+<p>Lines starting with a semicolon are comments and are echoed to the Viewer.</p>
+
+<p>Optionally a single password, encrypted or in plain text can be
+specified to be applied to files listed in OPEN sections if your version
+of Statistics supports this.  The password must be enclosed in quotes.</p>
+
+<p><strong>STARTUP</strong> specifies what happens in future sessions.  </p>
+
+<ul>
+<li>SET: future sessions will open this project automatically</li>
+<li>DELETE: future sessions will not open this project.</li>
+<li>ASIS: future sessions will operate the same as the current
+session.</li>
+</ul>
+
+<p>Note: SET creates a script that is automatically executed when
+Statistics starts.  If there is an existing startup script, it
+is replaced if it appears to have been created by this command.<br/>
+STARTUP=DELETE erases the startup script if it appears to have
+been created with this command.</p>
+
+<p>If you want to combine automatic project opening with other scripted
+activities at startup, you can add the startup code to your
+existing script.  This portion of the script would look like this.</p>
+
+<pre class="examplenobefore"><code>import SpssClient
+SpssClient.StartClient()
+SpssClient.RunSyntax(r&#39;&#39;&#39;STATS OPEN PROJECT FILE=&quot;project filename&quot;.&#39;&#39;&#39;)
+SpssClient.StopClient()
+</code></pre>
+
+<p>&copy; Copyright IBM Corp. 1989, 2014</p>
+
+</body>
+
+</html>
+
