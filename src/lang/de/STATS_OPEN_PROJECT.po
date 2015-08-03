@@ -1,0 +1,93 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2014
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+# NLS_ENCODING=UTF-8
+# IBMUPYTH
+
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-05-21 17:51+China Standard Time\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: STATS_OPEN_PROJECT.py:100
+msgid "**** Opening project %s"
+msgstr ""
+"**** Das Projekt %s wird geöffnet"
+
+#: STATS_OPEN_PROJECT.py:159
+msgid "Dataset"
+msgstr ""
+"Dataset"
+
+#: STATS_OPEN_PROJECT.py:160 STATS_OPEN_PROJECT.py:167
+#: STATS_OPEN_PROJECT.py:176
+msgid "Opened file %s"
+msgstr ""
+"Die Datei %s wurde geöffnet"
+
+#: STATS_OPEN_PROJECT.py:169 STATS_OPEN_PROJECT.py:178
+msgid "File: %s already open and has changed or could not be opened.  Not opened"
+msgstr ""
+"Die Datei %s ist bereits offen und wurde geändert oder konnte nicht geöffnet werden. Öffnen nicht durchgeführt"
+
+#: STATS_OPEN_PROJECT.py:180
+msgid "File to open has unknown extension: %s"
+msgstr ""
+"Die zu öffnende Datei hat eine unbekannte Erweiterung: %s"
+
+#: STATS_OPEN_PROJECT.py:182
+msgid "File open failure: %s"
+msgstr ""
+"Fehler beim Öffnen der Datei: %s"
+
+#: STATS_OPEN_PROJECT.py:204
+msgid ""
+"Cannot set new script or delete startup script, \n"
+"because existing script was not created by STATS OPEN PROJECT"
+msgstr ""
+"Neues Script kann nicht festgelegt oder Startscript kann nicht gelöscht werden, \n"
+"weil das vorhandene Script nicht mit STATS OPEN PROJECT erstellt wurde"
+
+#: STATS_OPEN_PROJECT.py:210
+msgid "Startup script %s removed"
+msgstr ""
+"Das Startscript %s wurde entfernt"
+
+#: STATS_OPEN_PROJECT.py:212
+msgid "Unable to remove startup script %s"
+msgstr ""
+"Das Startscript %s kann nicht entfernt werden"
+
+#: STATS_OPEN_PROJECT.py:236
+msgid "Unable to write startup script to %s"
+msgstr ""
+"Das Startscript kann nicht in %s geschrieben werden"
+
+#: STATS_OPEN_PROJECT.py:327
+msgid "---"
+msgstr ""
+"---"
+
+
+
