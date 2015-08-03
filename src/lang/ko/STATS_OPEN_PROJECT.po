@@ -1,0 +1,93 @@
+#/***********************************************************************
+# * Licensed Materials - Property of IBM 
+# *
+# * IBM SPSS Products: Statistics Common
+# *
+# * (C) Copyright IBM Corp. 1989, 2014
+# *
+# * US Government Users Restricted Rights - Use, duplication or disclosure
+# * restricted by GSA ADP Schedule Contract with IBM Corp. 
+# ************************************************************************/
+
+# NLS_ENCODING=UTF-8
+# IBMUPYTH
+
+
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-05-21 17:51+China Standard Time\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: ENCODING\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: STATS_OPEN_PROJECT.py:100
+msgid "**** Opening project %s"
+msgstr ""
+"**** 프로젝트 %s 열기"
+
+#: STATS_OPEN_PROJECT.py:159
+msgid "Dataset"
+msgstr ""
+"데이터 세트"
+
+#: STATS_OPEN_PROJECT.py:160 STATS_OPEN_PROJECT.py:167
+#: STATS_OPEN_PROJECT.py:176
+msgid "Opened file %s"
+msgstr ""
+"열린 파일 %s"
+
+#: STATS_OPEN_PROJECT.py:169 STATS_OPEN_PROJECT.py:178
+msgid "File: %s already open and has changed or could not be opened.  Not opened"
+msgstr ""
+"파일 %s이(가) 이미 열려서 변경되었거나 해당 파일을 열 수 없습니다. 파일이 열리지 않았습니다."
+
+#: STATS_OPEN_PROJECT.py:180
+msgid "File to open has unknown extension: %s"
+msgstr ""
+"열려는 파일의 확장자를 알 수 없습니다. %s"
+
+#: STATS_OPEN_PROJECT.py:182
+msgid "File open failure: %s"
+msgstr ""
+"파일 열기 실패: %s"
+
+#: STATS_OPEN_PROJECT.py:204
+msgid ""
+"Cannot set new script or delete startup script, \n"
+"because existing script was not created by STATS OPEN PROJECT"
+msgstr ""
+"새 스크립트를 설정하거나 시작 스크립트를 삭제할 수 없습니다. \n"
+"기존 스크립트가 STATS OPEN PROJECT로 작성되지 않았기 때문입니다."
+
+#: STATS_OPEN_PROJECT.py:210
+msgid "Startup script %s removed"
+msgstr ""
+"시작 스크립트 %s이(가) 제거되었습니다."
+
+#: STATS_OPEN_PROJECT.py:212
+msgid "Unable to remove startup script %s"
+msgstr ""
+"시작 스크립트 %s을(를) 제거할 수 없습니다."
+
+#: STATS_OPEN_PROJECT.py:236
+msgid "Unable to write startup script to %s"
+msgstr ""
+"시작 스크립트를 %s에 쓸 수 없습니다."
+
+#: STATS_OPEN_PROJECT.py:327
+msgid "---"
+msgstr ""
+"---"
+
+
+
