@@ -1,0 +1,17 @@
+Name: STATS OPEN PROJECT
+Dialog-Specs: STATS_OPEN_PROJECT.spd
+Command-Specs: STATS_OPEN_PROJECT.xml
+Code-Files: STATS_OPEN_PROJECT.py
+Misc-Files: markdown.html,extsyntax.css,IBMdialogicon.png
+Summary: Open a project
+Description: This command opens a project.  A project consists of Stat
+ istics syntax, files of type syntax and output, and other projects.  
+ Any syntax is run, and listed files are opened.  A project can be set
+  to open automatically when Statistics starts.
+Author: JKP, IBM SPSS
+Version: 1.0.4
+Product-Version: 18
+Date: 2/17/14
+Categories: utility
+Plugins: Python
+Translation-Catalogues: lang
