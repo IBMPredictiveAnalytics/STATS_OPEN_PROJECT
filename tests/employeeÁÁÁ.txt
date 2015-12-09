@@ -1,0 +1,9 @@
+﻿; Test file
+[RUN]
+FILE HANDLE data22 /NAME="c:/spss22/samples/english".
+FILE HANDLE data /NAME="c:/data".
+FILE HANDLE ccdata /NAME="c:/cc/misc2/extensions/python/stats_open_project/tests".
+GET FILE="data22/employee data.sav".
+[OPEN]
+ccdata\employee dataÁÁÁ.sav
+ccdata\basictestsÁÁÁ.sps

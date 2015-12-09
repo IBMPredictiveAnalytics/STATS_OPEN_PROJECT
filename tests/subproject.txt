@@ -1,0 +1,5 @@
+﻿; another project script
+[RUN]
+show dir.
+[OPEN]
+c:\data\replacecrlf.sps

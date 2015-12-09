@@ -1,0 +1,15 @@
+; Test file
+[RUN]
+* syntax to run when project is opened.
+FILE HANDLE data22 /NAME="c:/spss22/samples/english".
+FILE HANDLE data /NAME="c:/data".
+GET FILE="data22/employee data.sav".
+[OPEN]
+;list of files to be opened according to type (data files get automatic dataset name assigned).
+data/worldbank2001.sav
+c:/temp/teacher.sps
+c:/temp/mrsetsexample.sps
+c:/temp/mergedTables.spv
+[PROJECT]
+; zero or more project files to be run in order.
+c:/cc/misc2/extensions/python/stats_open_project/tests/subproject.txt

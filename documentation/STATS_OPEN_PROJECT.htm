@@ -1,0 +1,122 @@
+<html>
+<head>
+<title>Open a Project</title>
+<STYLE TYPE="text/css"> 
+<!-- 
+
+H1 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:125%; }
+H2 {font-weight:bold; color:#006699; font-family:Verdana, Arial, sans-serif;font-size:110%; }
+BODY {font-family:Verdana, Arial, sans-serif;font-size:80%; }
+TABLE {font-size:100%;font-family:Verdana, Arial, sans-serif;}
+
+/* paragraph tags */
+.step {text-indent: -1.3em; margin-left:1.3em; margin-top: 0px;}
+.step-glyph { font-family: Arial, Helvetica, sans-serif; }
+.menuselection {margin-left:10px}
+.bullet {list-style-type: disc;margin-top:12px; margin-left:36px; text-indent:-1em; }
+.codeblock {background-color: #ffffe6; display:block; margin-left:5px; padding:5px;font-family:"courier new",monospace; }
+
+/* inline tags */
+.code {font-family: Courier,fixed pitch;}                           /*** used to tag pieces of code (syntax, Python, R, HTML, etc.)   ***/
+.screen {font-weight:bold; color:#408080}                       /*** used refer to on-screen text ***/
+.name {font-style: italic}                                                       /*** used to tag names, such as variable names, file names, and so forth ***/
+.runinhead {font-weight: bold} 
+.superscript {vertical-align:super; font-size:80%}
+.subscript {vertical-align:sub; font-size:80%}
+.symbol {font-family: Symbol}
+
+--> 
+</STYLE>
+</head>
+<body>
+<h1>Open a Project</h1>
+<p>This command reads a project file, executes the syntax specified in it,
+and opens data (.sav), syntax (.sps), and output (.spv) files listed there.
+It can also process other project files, which will be processed in the order listed.
+A project file is a plain text file divided into sections.  The format is as follows.
+</p>
+<p>
+[RUN]<br/>
+syntax commands in interactive format.  This is equivalent to 
+running commands by using the INSERT command.<br/>
+[OPEN]<br/>
+list of data (.sav), syntax (.sps), and output (.spv) files to open<br/>
+[PROJECT]<br/>
+list of other project files to be opened<br/>
+</p>
+<p>
+Sections may appear in any order and may be repeated.
+Files listed in a PROJECT section are files in this same format.
+If you have a standard utility library and various working projects,
+it may be convenient to reference a standard project file first from the
+working project and then
+list additional working project specifications.</p>
+<p>
+File handles defined in executed RUN sections or before this command can
+be used in any section.</p>
+<p>
+Lines starting with a semicolon are comments and are echoed to the Viewer.</p>
+<p>The project file is expected to be in the Unicode UTF-8 encoding.  You can
+create such files using the Statistics Syntax Editor or an encoding-aware
+editor such as Notepad on Windows.</p>
+
+<p><span class="runinhead">Project File</span> 
+Select a project file that conforms to the format described above.</p>
+<p class="bullet">• 
+SAV files listed in the OPEN section will be assigned random dataset names.
+If a data file is already open and does not have a dataset name, opening
+new data files will cause it to close.</p>
+<p class="bullet">• 
+If a syntax or output file is open and has been modified but not
+resaved, it will not be reopened by this command.</p>
+
+<p><span class="runinhead">Password for Opening Files</span> 
+You can specify a single password to be used for the files in the
+OPEN section of the project as either encrypted or in plain text.  Project files themselves
+are not encrypted.
+</p>
+
+<p><span class="runinhead">Statistics Startup</span>
+Choose whether future sessions should automatically open this
+project when Statistics starts, should stop opening this project,
+or should continue with current behavior.  Choosing the second
+or third buttons will overwrite or remove a startup script if
+one already exists and the script appears to have been created
+by this command. </p>
+<p class="bullet">• 
+On some systems, Statistics may not have sufficient permissions to
+create or remove the script.  Starting Statistics using Run As Administrator
+may solve this problem on Windows 7 and similar.</p>
+
+<h2>More on Opening a Project Automatically When Statistics Starts</h2>
+See Help > Core System > Scripting Facility > Startup Scripts for full details
+on startup scripts.  If you want to combine automatic project opening with
+a larger startup script, you can add code like this to that script.
+</p>
+<p><span class="code">
+import SpssClient<br/>
+SpssClient.StartClient()<br/>
+SpssClient.RunSyntax(r"""STATS OPEN PROJECT FILE="project filename".""")<br/>
+SpssClient.StopClient()<br/>
+</span>
+<p>The startup script is named StartClient_.py and must be in the scripts subdirectory of the
+SPSS Statistics installation.</p>
+<h2>Additional Features</h2>
+<p>
+This dialog generates syntax for the STATS OPEN PROJECT extension command. To display syntax help for this command,
+run the following syntax:
+</p>
+<p class="codeblock">STATS OPEN PROJECT /HELP.</p>
+
+<h2>Requirements</h2>
+This command requires the Python Essentials
+You can download the Essentials via the SPSS Community website at www.ibm.com/developerworks/spssdevcentral
+or from your installation materials.  With Statistics 22 or later, the Essentials are
+included by default in your Statistics installation.
+</p>
+  <hr
+  <p style="font-family:Verdana, Arial, sans-serif;font-size:80%;">
+  © Copyright IBM Corp. 2014</p>
+</body>
+</html>
+

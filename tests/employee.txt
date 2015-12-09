@@ -1,0 +1,5 @@
+; Test file
+[RUN]
+FILE HANDLE data22 /NAME="c:/spss22/samples/english".
+FILE HANDLE data /NAME="c:/data".
+GET FILE="data22/employee data.sav".
