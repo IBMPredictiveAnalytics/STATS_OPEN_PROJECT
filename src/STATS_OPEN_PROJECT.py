@@ -3,13 +3,13 @@
 # *
 # * IBM SPSS Products: Statistics Common
 # *
-# * (C) Copyright IBM Corp. 2014
+# * (C) Copyright IBM Corp. 2014-2020
 # *
 # * US Government Users Restricted Rights - Use, duplication or disclosure
 # * restricted by GSA ADP Schedule Contract with IBM Corp. 
 # ************************************************************************/
 
-from __future__ import with_statement
+
 
 import os.path, random, re, os, codecs
 import spss, spssaux, SpssClient
@@ -97,7 +97,7 @@ def doproj(projfile, password=None, startup="asis"):
     fh = FileHandles()
     projfile = fh.resolve(projfile)
     setstartup(projfile, startup, password)
-    print _("""**** Opening project %s""") % projfile
+    print("**** Opening project %s" % projfile)
     state = None
     lines = []
     ###with open(projfile) as f:
@@ -106,10 +106,10 @@ def doproj(projfile, password=None, startup="asis"):
             line = line.rstrip()  # strip newline
             # lines starting with "<whitespace>;" are comments and are just printed
             if line.lstrip().startswith(";"):
-                print line
+                print(line)
                 continue
             # if section header, process previous section; otherwise accumulate lines
-            if line in dispatch.keys():
+            if line in list(dispatch.keys()):
                 if state == "[PROJECT]":
                     for item in lines:
                         doproj(item, password)  # Will never set child as startup script
@@ -157,29 +157,29 @@ def doopen(lines, password):
                     spss.Submit(cmd)
                     # assign a random dataset name
                     spss.Submit("""DATASET NAME %s.""" % _("""Dataset""") + str(random.randint(1000, 100000)))
-                    print _("""Opened file %s""") % line
+                    print(_("""Opened file %s""") % line)
                 elif ext == ".sps":
                     try:
                         if password is None:
                             SpssClient.OpenSyntaxDoc(line)
                         else:
                             SpssClient.OpenSyntaxDoc(line, password)
-                        print _("""Opened file %s""") % line
+                        print(_("""Opened file %s""") % line)
                     except:
-                        print _("""File: %s already open and has changed or could not be opened.  Not opened""") % line
+                        print(_("""File: %s already open and has changed or could not be opened.  Not opened""") % line)
                 elif ext == ".spv":
                     try:
                         if password is None:
                             SpssClient.OpenOutputDoc(line)
                         else:
                             SpssClient.OpenOutputDoc(line, password)
-                        print _("""Opened file %s""") % line
+                        print(_("""Opened file %s""") % line)
                     except:
-                        print _("""File: %s already open and has changed or could not be opened.  Not opened""") % line                
+                        print(_("""File: %s already open and has changed or could not be opened.  Not opened""") % line)                
                 else:
                     raise ValueError(_("""File to open has unknown extension: %s""") % line)
         except:
-            print _("""File open failure: %s""") % line
+            print(_("""File open failure: %s""") % line)
         finally:
             SpssClient.SetUIAlerts(uialerts)
             SpssClient.StopClient()
@@ -207,7 +207,7 @@ because existing script was not created by STATS OPEN PROJECT"""))
         try:
             if os.path.exists(installscript):
                 os.remove(installscript)
-                print _("""Startup script %s removed""") % installscript
+                print(_("""Startup script %s removed""") % installscript)
         except:
             raise ValueError(_("""Unable to remove startup script %s""") % installscript)
     else: # create install script
@@ -218,7 +218,7 @@ because existing script was not created by STATS OPEN PROJECT"""))
         # Write the script in utf-8 in case file name contains extended characters (also includes BOM)
         # First line is STATS OPEN PROJECT signature to protect other startup scripts
         
-        content = u"""# %s
+        content = """# %s
 # -*- coding: utf_8_sig -*-
 import SpssClient
 SpssClient.StartClient()
@@ -231,7 +231,7 @@ finally:
             with codecs.EncodedFile(codecs.open(installscript, "wb"), 
                     "unicode_internal", "utf_8_sig") as f:
                 f.write(content)
-            print "Startup script written to %s" % installscript
+            print("Startup script written to %s" % installscript)
         except:
             raise ValueError(_("""Unable to write startup script to %s""") % installscript)
 
@@ -311,7 +311,7 @@ class FileHandles(object):
 def Run(args):
     """Execute the STATS OPEN PROJECT extension command"""
 
-    args = args[args.keys()[0]]
+    args = args[list(args.keys())[0]]
 
     oobj = Syntax([
         Template("FILE", subc="",  ktype="literal", var="projfile"),
@@ -329,7 +329,7 @@ def Run(args):
         def _(msg):
             return msg
     # A HELP subcommand overrides all else
-    if args.has_key("HELP"):
+    if "HELP" in args:
         #print helptext
         helper()
     else:
@@ -349,7 +349,7 @@ def helper():
     # webbrowser.open seems not to work well
     browser = webbrowser.get()
     if not browser.open_new(helpspec):
-        print("Help file not found:" + helpspec)
+        print(("Help file not found:" + helpspec))
 try:    #override
     from extension import helper
 except:
