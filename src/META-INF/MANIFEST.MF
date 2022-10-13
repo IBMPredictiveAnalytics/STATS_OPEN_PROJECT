@@ -1,4 +1,5 @@
 Name: STATS OPEN PROJECT
+Display-Name: Open Project
 Dialog-Specs: STATS_OPEN_PROJECT.spd
 Command-Specs: STATS_OPEN_PROJECT.xml
 Code-Files: STATS_OPEN_PROJECT.py
